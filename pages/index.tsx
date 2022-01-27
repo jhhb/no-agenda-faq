@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import { Callout } from "@blueprintjs/core";
 
-export default function Home() {
+export interface HomePageProps {}
+
+export default function Home(props: HomePageProps) {
   return (
     <div className="container">
       <Head>
@@ -16,8 +19,12 @@ export default function Home() {
           Get started by editing <code>pages/index.js</code>
         </p>
       </main>
-
+      {Faq()}
       <Footer />
     </div>
-  )
+  );
+}
+
+function Faq() {
+  return <Callout title="SUp" />;
 }
