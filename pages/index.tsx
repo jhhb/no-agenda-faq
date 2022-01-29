@@ -26,7 +26,7 @@ export default function Home(_props: HomePageProps) {
   return (
     <div>
       <Head>
-        <title>No Agenda FAQ</title>
+        <title>No Agenda FAQ - Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />

@@ -1,6 +1,6 @@
 import {
-  AnchorButton,
   Navbar,
+  NavbarDivider,
   NavbarGroup,
   NavbarHeading,
 } from "@blueprintjs/core";
@@ -12,9 +12,10 @@ export function Nav() {
         <NavbarHeading>
           <Link href="/">No Agenda FAQ</Link>
         </NavbarHeading>
-        <AnchorButton minimal={true} icon="home" href="/">
-          <NavbarHeading>No Agenda FAQ</NavbarHeading>
-        </AnchorButton>
+        <NavbarDivider />
+        <NavbarGroup>
+          <Link href="/resources">Community Resources</Link>
+        </NavbarGroup>
       </NavbarGroup>
     </Navbar>
   );
