@@ -1,30 +1,53 @@
+import { Sidebar, WithSidebar } from "@components/Sidebar";
 import Head from "next/head";
-import Header from "@components/Header";
+import { Nav } from "@components/Nav";
 import Footer from "@components/Footer";
-import { Callout } from "@blueprintjs/core";
+import { FaqCards } from "@components/Faq";
+import { FAQ_DATA } from "../public/data/faq";
 
 export interface HomePageProps {}
 
-export default function Home(props: HomePageProps) {
+interface RawFaqElement {
+  heading: string;
+  detail: string;
+  tags: Array<string>;
+}
+
+interface RawFaqData {
+  elements: Array<RawFaqElement>;
+}
+
+export interface TransformedFaqElement extends RawFaqElement {
+  domId: string;
+}
+
+export default function Home(_props: HomePageProps) {
+  const transformedData = transformFaqData(FAQ_DATA);
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>No Agenda FAQ</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-      {Faq()}
+      <Nav />
+      <WithSidebar
+        sidebarContents={<Sidebar elements={transformedData} />}
+        otherContents={<FaqCards elements={transformedData} />}
+      />
       <Footer />
     </div>
   );
 }
 
-function Faq() {
-  return <Callout title="SUp" />;
+function transformFaqData(props: RawFaqData): Array<TransformedFaqElement> {
+  return props.elements.map((faqElement) => {
+    return {
+      domId: generateDomId(faqElement.heading),
+      ...faqElement,
+    };
+  });
+}
+
+function generateDomId(text: string): string {
+  return `${text.split(" ").join("-")}`;
 }
