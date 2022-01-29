@@ -1,6 +1,7 @@
 import { Card, H5, Tag } from "@blueprintjs/core";
 import { TransformedFaqElement } from "@pages/index";
 import * as React from "react";
+import parse from "html-react-parser";
 import styles from "./Faq.module.css";
 
 interface FaqCardProps {
@@ -33,7 +34,7 @@ export function FaqCard(props: FaqCardProps) {
   return (
     <Card className={styles.card} id={props.id}>
       <H5>{props.heading}</H5>
-      <p>{props.detail}</p>
+      <p>{parse(props.detail)}</p>
       <TagsContainer {...props} />
     </Card>
   );
