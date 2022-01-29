@@ -2,6 +2,7 @@ import { Callout } from "@blueprintjs/core";
 import Footer from "@components/Footer";
 import { Nav } from "@components/Nav";
 import Head from "next/head";
+import { LINKS_DATA } from "../public/data/links";
 
 export default function Resources(_props: unknown) {
   return (
@@ -19,19 +20,29 @@ export default function Resources(_props: unknown) {
 
 function Page() {
   return (
-    <div style={{ paddingLeft: "20%", paddingRight: "20%" }}>
-      <Callout intent={"primary"} title={undefined}>
+    <div
+      style={{
+        paddingLeft: "20%",
+        paddingRight: "20%",
+        paddingTop: "1%",
+        paddingBottom: "1%",
+      }}
+    >
+      <Callout
+        intent={"primary"}
+        title="Catalog of No Agenda Community resources"
+      >
         <p>
-          Do you ever find yourself listening to a No Agenda episode, hearing
-          about a cool website or business a producer created, and then
-          wondering how to find it again?
+          These are resources that are official resources, or: either directly
+          relate to No Agenda, or were created by No Agenda community members
+          for the NA community
         </p>
-        <p>
-          Here's a catalog of No Agenda community resources that producers have
-          created and shared with the No Agenda community. These are resources
-          that either directly relate to No Agenda, or give donations back to
-          the show.
-        </p>
+      </Callout>
+      <LinksList elements={LINKS_DATA.elements} />
+      <Callout
+        intent={"warning"}
+        title="If you'd like another website added to the list..."
+      >
         <p>
           If you'd like your NA-related project, business, etc., listed here,
           you can contribute directly{" "}
@@ -44,5 +55,39 @@ function Page() {
         <pre>noagendafaq (AT) fastmail (DOT) com</pre>
       </Callout>
     </div>
+  );
+}
+
+interface LinksListProps {
+  elements: Array<LinkWithMeta>;
+}
+
+interface LinkWithMeta {
+  url: string;
+  desc: string;
+}
+
+function LinksList(props: LinksListProps) {
+  return (
+    <div>
+      <ul>
+        {props.elements.map((el) => (
+          <LinkWithMeta {...el} key={el.url} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function LinkWithMeta(props: LinkWithMeta) {
+  return (
+    <>
+      <li>
+        <a href={props.url}>{props.url}</a>
+      </li>
+      <ul>
+        <li>{props.desc}</li>
+      </ul>
+    </>
   );
 }
