@@ -48,7 +48,7 @@ export const FAQ_DATA = {
     {
       heading: "What is value-for-value?",
       detail: `<a href="https://noagendaglossary.com/glossary/value-for-value-model/">Value-for-value</a> is a business model where users of a service for the service based on what they have to contribute, and based on the value they believe the service has provided to them. This is the model that the No Agenda Show uses for funding.`,
-      tags: [TAGS.donate, TAGS.donate, TAGS.terms],
+      tags: [TAGS.donate, TAGS.terms],
     },
     {
       heading: "What is a producer?",
