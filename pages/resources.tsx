@@ -1,4 +1,4 @@
-import { Callout } from "@blueprintjs/core";
+import { Callout, Tag } from "@blueprintjs/core";
 import Footer from "@components/Footer";
 import { Nav } from "@components/Nav";
 import Head from "next/head";
@@ -20,14 +20,7 @@ export default function Resources(_props: unknown) {
 
 function Page() {
   return (
-    <div
-      style={{
-        paddingLeft: "20%",
-        paddingRight: "20%",
-        paddingTop: "1%",
-        paddingBottom: "1%",
-      }}
-    >
+    <div style={{ padding: "1%" }}>
       <Callout
         intent={"primary"}
         title="Catalog of No Agenda Community resources"
@@ -65,6 +58,7 @@ interface LinksListProps {
 interface LinkWithMeta {
   url: string;
   desc: string;
+  source?: string;
 }
 
 function LinksList(props: LinksListProps) {
@@ -82,8 +76,9 @@ function LinksList(props: LinksListProps) {
 function LinkWithMeta(props: LinkWithMeta) {
   return (
     <>
-      <li>
-        <a href={props.url}>{props.url}</a>
+      <li style={{ padding: "1%" }}>
+        <a href={props.url}>{props.url}</a>{" "}
+        {props.source ? <Tag intent={"primary"}>{props.source}</Tag> : null}
       </li>
       <ul>
         <li>{props.desc}</li>

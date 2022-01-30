@@ -18,6 +18,16 @@ export const FAQ_DATA = {
       tags: [],
     },
     {
+      heading: "Why should I listen to the show?",
+      detail: `You should listen to the show because it will help you stay sane in this crazy world and de-program you from the mainstream media bull crap! It's also got the best community of any podcast -- the show's content, art, and funding for every episode is driven by producers like you, and there is truly no other podcast or show like it.`,
+      tags: [],
+    },
+    {
+      heading: "This FAQ website SUCKS. How can I make it better?",
+      detail: `You can make it better by sending emails to noagendafaq (AT) fastmail (DOT) com. Or, if you have content that you'd like to add or update directly, you can open an issue <a href="https://github.com/jhhb/no-agenda-faq">on Github</a>`,
+      tags: [TAGS.meta],
+    },
+    {
       heading: "When and how can I listen to the No Agenda Show?",
       detail:
         "You can catch the show live, twice a week on Thursday and Sunday, 9AM Pacific Time, or listen to episodes any time you want using your favorite podcasting app.",
@@ -64,18 +74,13 @@ export const FAQ_DATA = {
     {
       heading:
         "Where can I find more projects, websites, etc., from the No Agenda community?",
-      detail: "TODO",
+      detail: `No Agenda FAQ is working on compiling a big list of everything over at <a href="/resources">our resources page</a>`,
       tags: [TAGS.community],
     },
     {
       heading: "How many jingles can I request?",
       detail: "4 jingles is the maximum. Or else.",
       tags: [TAGS.jingles],
-    },
-    {
-      heading: "This FAQ website SUCKS. How can I make it better?",
-      detail: `You can make it better by sending emails to noagendafaq (AT) fastmail (DOT) com. Or, if you have content that you'd like to add or update directly, you can open an issue <a href="https://github.com/jhhb/no-agenda-faq">on Github</a>`,
-      tags: [TAGS.meta],
     },
   ],
 };
