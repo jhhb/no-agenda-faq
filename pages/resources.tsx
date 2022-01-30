@@ -3,6 +3,7 @@ import Footer from "@components/Footer";
 import { Nav } from "@components/Nav";
 import Head from "next/head";
 import { LINKS_DATA } from "../public/data/links";
+import styles from "./resources.module.css";
 
 export default function Resources(_props: unknown) {
   return (
@@ -20,7 +21,7 @@ export default function Resources(_props: unknown) {
 
 function Page() {
   return (
-    <div style={{ padding: "1%" }}>
+    <div className={styles["page-container"]}>
       <Callout
         intent={"primary"}
         title="Catalog of No Agenda Community resources"
@@ -76,7 +77,7 @@ function LinksList(props: LinksListProps) {
 function LinkWithMeta(props: LinkWithMeta) {
   return (
     <>
-      <li style={{ padding: "1%" }}>
+      <li className={styles.link}>
         <a href={props.url}>{props.url}</a>{" "}
         {props.source ? <Tag intent={"primary"}>{props.source}</Tag> : null}
       </li>

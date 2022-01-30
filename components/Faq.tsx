@@ -43,7 +43,7 @@ export function FaqCard(props: FaqCardProps) {
 function TagsContainer(props: FaqCardProps) {
   const tags = props.tags.map((tagText) => {
     return (
-      <span style={{ padding: "4px" }} key={props.id + tagText}>
+      <span className={styles["tags-container"]} key={props.id + tagText}>
         <Tag>{tagText}</Tag>
       </span>
     );

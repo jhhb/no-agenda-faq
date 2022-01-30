@@ -23,5 +23,12 @@
 }
 
 .sidebar-link {
-  padding: 4% 1%;
+  padding: 1%;
+}
+
+/* For smaller screens, bump padding of links */
+@media screen and (max-width: 600px) {
+  .sidebar-link {
+    padding: 4% 1%;
+  }
 }

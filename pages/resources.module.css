@@ -1,0 +1,10 @@
+.page-container {
+  padding: 1%;
+}
+
+/* For smaller screens, bump padding of links */
+@media screen and (max-width: 600px) {
+  .link {
+    padding: 1%;
+  }
+}
