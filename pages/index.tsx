@@ -1,7 +1,5 @@
+import { Page } from "@components/Page";
 import { Sidebar, WithSidebar } from "@components/Sidebar";
-import Head from "next/head";
-import { Nav } from "@components/Nav";
-import Footer from "@components/Footer";
 import { FaqCards } from "@components/Faq";
 import { FAQ_DATA } from "../public/data/faq";
 
@@ -24,18 +22,12 @@ export interface TransformedFaqElement extends RawFaqElement {
 export default function Home(_props: HomePageProps) {
   const transformedData = transformFaqData(FAQ_DATA);
   return (
-    <div>
-      <Head>
-        <title>No Agenda FAQ - Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Nav />
+    <Page title="No Agenda FAQ - Home">
       <WithSidebar
         sidebarContents={<Sidebar elements={transformedData} />}
         otherContents={<FaqCards elements={transformedData} />}
       />
-      <Footer />
-    </div>
+    </Page>
   );
 }
 

@@ -1,25 +1,17 @@
 import { Callout, Tag } from "@blueprintjs/core";
-import Footer from "@components/Footer";
-import { Nav } from "@components/Nav";
-import Head from "next/head";
+import { Page } from "@components/Page";
 import { LINKS_DATA } from "../public/data/links";
 import styles from "./resources.module.css";
 
 export default function Resources(_props: unknown) {
   return (
-    <div>
-      <Head>
-        <title>No Agenda FAQ - Community Resources</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Nav />
-      <Page />
-      <Footer />
-    </div>
+    <Page title="No Agenda FAQ - Community Resources">
+      <ResourcesPage />
+    </Page>
   );
 }
 
-function Page() {
+function ResourcesPage() {
   return (
     <div className={styles["page-container"]}>
       <Callout
