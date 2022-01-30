@@ -34,7 +34,7 @@ export function FaqCard(props: FaqCardProps) {
   return (
     <Card className={styles.card} id={props.id}>
       <H5>{props.heading}</H5>
-      <p>{parse(props.detail)}</p>
+      <span>{parse(props.detail)}</span>
       <TagsContainer {...props} />
     </Card>
   );
