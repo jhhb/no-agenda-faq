@@ -1,6 +1,7 @@
 import Footer from "@components/Footer";
 import { Nav } from "@components/Nav";
 import Head from "next/head";
+import styles from "./Page.module.css";
 
 interface PageProps {
   title: string;
@@ -15,7 +16,7 @@ export function Page(props: PageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      {props.children}
+      <div className={styles["page-wrapper"]}>{props.children}</div>
       <Footer />
     </div>
   );
