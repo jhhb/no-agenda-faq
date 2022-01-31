@@ -24,9 +24,21 @@
   padding: 1%;
 }
 
-/* For smaller screens, bump padding of links */
+/* For smaller screens:
+- bump link padding
+- display the main page content as two full-width, stacked columns.
+ */
 @media screen and (max-width: 600px) {
   .sidebar-link {
-    padding: 4% 1%;
+    padding: 2% 1%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-content-container, .other-content-container {
+    width: 100%;
   }
 }
