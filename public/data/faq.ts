@@ -82,6 +82,11 @@ export const FAQ_DATA = {
       detail: "4 jingles is the maximum. Or else.",
       tags: [TAGS.jingles],
     },
+    {
+      heading: "What are the rules for art submission?",
+      detail: `For all you rule-followers: <ol><li>You can't use Adam or John's faces anywhere.</li><li>Nothing disgusting or gross</li><li>No images of the COVID-19 virus.</li><li>More to-be-added.</li>`,
+      tags: [TAGS.art],
+    },
   ],
 };
 
